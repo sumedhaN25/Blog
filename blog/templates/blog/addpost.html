@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-sm-10">
+    <h3 class="text-white my-5">Dashboard/ Add Post</h3>
+    <hr>
+    <form action="{% url 'addpost' %}" method="post">
+        {% csrf_token %}
+        
+        <label for="title">Title</label><br>
+        <input type="text" id="title" name="title" value="{{ title }}" size="97"><br><br>
+        
+        <label for="desc">Description</label><br>
+        <textarea id="desc" name="desc" rows="4" cols="100">{{ desc }}</textarea><br>
+        
+        <hr>
+
+        <button type="submit" class="btn btn-primary">Add Post</button>
+        <a href="{% url 'dashboard' %}" class="btn btn-danger">Cancel</a>
+    </form>
+</div>
+
+{% endblock content %}

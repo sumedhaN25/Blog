@@ -1,0 +1,42 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-sm-10">
+    <h3 class="text-white my-5">SignUp Page</h3>
+    <form  method="post" action="{% url 'signup' %}">
+
+        {% csrf_token %}
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label for="username">Username</label>
+                <input type="text" name="username" class="form-control" id="username" required>
+            </div><br>
+
+            <div class="form-group col-md-6">
+                <label for="first_name">First_Name</label>
+                <input type="text" name="first_name" class="form-control" id="first_name" required>
+            </div><br>
+
+            <div class="form-group col-md-6">
+                <label for="last_name">Last_Name</label>
+                <input type="text" name="last_name" class="form-control" id="last_name" required>
+            </div><br>
+            
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" id="email" required>
+            </div><br>
+            <div class="form-group col-md-6">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" id="password" required>
+            </div><br>
+            <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+    </form>
+        </div>
+</div>
+    
+{% endblock content %}
+
+    
